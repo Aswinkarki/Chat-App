@@ -2,7 +2,7 @@ import React from 'react';
 import { PiUserCircle } from "react-icons/pi";
 import { useSelector } from 'react-redux';
 
-const Avatar = ({ userId, name, imageUrl, width, height }) => {
+const Avatar = ({ userId, name, imageUrl, width = 70, height = 70 }) => {
   const onlineUser = useSelector(state => state?.user?.onlineUser);
 
   let avatarName = "";
@@ -27,26 +27,23 @@ const Avatar = ({ userId, name, imageUrl, width, height }) => {
     "bg-blue-200"
   ];
 
-  const randomNumber = Math.floor(Math.random() * 9);
+  const randomNumber = Math.floor(Math.random() * bgColor.length);
   const isOnline = onlineUser.includes(userId);
 
   return (
     <div
-      className={`relative rounded-full flex items-center justify-center font-bold text-gray-800 transition-transform duration-200 hover:scale-105 hover:shadow-md`}
+      className={`relative rounded-full flex items-center justify-center font-bold text-gray-800 transition-transform duration-200 hover:scale-105 hover:shadow-md overflow-hidden`}
       style={{ width: `${width}px`, height: `${height}px` }}
     >
       {imageUrl ? (
         <img
           src={imageUrl}
-          width={width}
-          height={height}
           alt={name}
-          className='rounded-full object-cover'
+          className="w-full h-full object-cover rounded-full"
         />
       ) : name ? (
         <div
-          className={`rounded-full flex items-center justify-center text-lg uppercase ${bgColor[randomNumber]}`}
-          style={{ width: `${width}px`, height: `${height}px` }}
+          className={`w-full h-full flex items-center justify-center text-lg uppercase ${bgColor[randomNumber]}`}
         >
           {avatarName}
         </div>

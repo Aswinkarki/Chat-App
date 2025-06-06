@@ -54,9 +54,10 @@ const Sidebar = () => {
   };
 
   return (
-    <div className='w-full h-full grid grid-cols-[56px,1fr] bg-white'>
-      {/* Sidebar Icons */}
-      <div className='bg-gray-50 w-14 h-full rounded-tr-lg rounded-br-lg py-6 text-gray-600 flex flex-col justify-between shadow-sm'>
+    <div className='w-full h-full flex'>
+    {/* Sidebar Icons */}
+<div className='bg-gray-50 w-14 h-full flex flex-col justify-between py-6 text-gray-600 shadow-sm'>
+
         <div className='flex flex-col gap-2'>
           <NavLink
             className={({ isActive }) =>

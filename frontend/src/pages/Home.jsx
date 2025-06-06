@@ -62,7 +62,7 @@ const Home = () => {
   const basePath = location.pathname === '/';
 
   return (
-    <div className='grid lg:grid-cols-[300px,1fr] h-screen max-h-screen bg-gray-100'>
+    <div className='grid lg:grid-cols-[250px_1fr] h-screen max-h-screen bg-gray-100'>
       <section className={`bg-white shadow-lg ${!basePath && "hidden"} lg:block transition-all duration-300`}>
         <Sidebar />
       </section>
